@@ -1,0 +1,54 @@
+{
+    "manifestVersion": 1,
+    "id": "WarpTools",
+    "name": "Warp Tools",
+    "version": "0.0.1",
+    "publisher": "JamiePhillips",
+    "public": true,
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Tools for building/releasing with Warp. Includes one build/release task.",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"        
+    },
+    "files": [
+        {
+            "path": "warp"
+        }
+    ],
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/phillipsj/pipelines-tasks-warp#README"
+        },
+        "support": {
+            "uri": "https://github.com/phillipsj/pipelines-tasks-warp"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/phillipsj/pipelines-tasks-warp"
+    },
+    "contributions": [
+        {
+            "id": "WarpTools",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "warp"
+            }
+        }
+    ]
+}
