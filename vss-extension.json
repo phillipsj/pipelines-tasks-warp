@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "WarpTools",
     "name": "Warp Tools",
-    "version": "0.2.0",
+    "version": "0.4.0",
     "publisher": "JamiePhillips",
     "public": true,
     "targets": [
@@ -47,7 +47,7 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "warp"
+                "name": "WarpTool"
             }
         }
     ]

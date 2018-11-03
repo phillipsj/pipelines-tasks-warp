@@ -27,7 +27,7 @@ async function acquireNode(version: string): Promise<string> {
     version = toolLib.cleanVersion(version);
     let downloadUrl = downloadLink(version, os.platform())
     let downloadPath = await toolLib.downloadTool(downloadUrl);    
-    return await toolLib.cacheFile('warp-packer', 'warp-packer', version, 'warp-packer');
+    return await toolLib.cacheFile(downloadPath, 'warp-packer', version, 'warp-packer');
 }
 
 run();
