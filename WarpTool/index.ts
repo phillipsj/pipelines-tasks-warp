@@ -1,5 +1,5 @@
-import * as taskLib from 'vsts-task-lib/task';
-import * as toolLib from 'vsts-task-tool-lib/tool';
+import * as taskLib from 'azure-pipelines-task-lib/task';
+import * as toolLib from 'azure-pipelines-tool-lib/tool';
 import * as os from 'os';
 
 async function run() {
@@ -27,7 +27,7 @@ async function acquireNode(version: string): Promise<string> {
     version = toolLib.cleanVersion(version);
     let downloadUrl = downloadLink(version, os.platform())
     let downloadPath = await toolLib.downloadTool(downloadUrl);    
-    return await toolLib.cacheFile(downloadPath, 'warp-packer', version, 'warp-packer');
+    return await toolLib.cacheFile(downloadPath, 'warp-packer', 'warp-packer', version);
 }
 
 run();

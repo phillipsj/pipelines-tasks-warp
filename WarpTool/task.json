@@ -12,7 +12,7 @@
     "author": "Jamie Phillips",
     "version": {
         "Major": 0,
-        "Minor": 1,
+        "Minor": 6,
         "Patch": 0
     },
     "satisfies": ["Warp"],

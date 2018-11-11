@@ -2,7 +2,7 @@ import tool from '../index';
 import { expect } from 'chai';
 import * as path from 'path';
 import * as assert from 'assert';
-import * as ttm from 'vsts-task-lib/mock-test';
+import * as ttm from 'azure-pipelines-task-lib/mock-test';
 
 describe('prepare download link', () => {
     it('constructs a link from version and os', () => {
