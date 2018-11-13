@@ -1,5 +1,5 @@
 {
-  "name": "warp",
+  "name": "warp-packer",
   "version": "0.7.0",
   "description": "Warp Tasks for Azure DevOps",
   "main": "index.js",
@@ -12,16 +12,10 @@
   "author": "Jamie Phillips",
   "license": "Apache-2.0",
   "dependencies": {
-    "azure-pipelines-task-lib": "^2.7.4",
-    "azure-pipelines-tool-lib": "^0.11.0"
+    "azure-pipelines-task-lib": "^2.7.4"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.1",
-    "@types/q": "^1.5.1",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "typescript": "^3.1.4"
+    "@types/node": "^10.12.6",
+    "@types/q": "^1.5.1"
   }
 }
