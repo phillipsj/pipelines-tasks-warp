@@ -1,6 +1,6 @@
 {
   "name": "warp",
-  "version": "0.7.0",
+  "version": "0.10.0",
   "description": "Warp Tasks for Azure DevOps",
   "main": "index.js",
   "scripts": {

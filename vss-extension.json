@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "WarpTools",
     "name": "Warp Tools",
-    "version": "0.7.0",
+    "version": "0.10.0",
     "publisher": "JamiePhillips",
     "public": true,
     "targets": [
@@ -18,6 +18,9 @@
         "default": "images/extension-icon.png"        
     },
     "files": [
+        {
+            "path": "Warp"
+        },
         {
             "path": "WarpTool"
         }
@@ -40,6 +43,16 @@
         "uri": "https://github.com/phillipsj/pipelines-tasks-warp"
     },
     "contributions": [
+        {
+            "id": "Warp",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Warp"
+            }
+        },
         {
             "id": "WarpTools",
             "type": "ms.vss-distributed-task.task",

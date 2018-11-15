@@ -20,22 +20,28 @@ async function getNode(version: string) {
     if (!toolPath) {
         toolPath = await acquireNode(version);
     }
+    
     toolLib.prependPath(toolPath);
 }
 
 async function acquireNode(version: string): Promise<string> {
-    version = toolLib.cleanVersion(version);
-    let downloadUrl = downloadLink(version, os.platform())
+    version = toolLib.cleanVersion(version);   
+    let warpExecutable: string = getExecutableName(os.platform());
+    let downloadUrl = downloadLink(version, warpExecutable)
     let downloadPath = await toolLib.downloadTool(downloadUrl);    
     return await toolLib.cacheFile(downloadPath, 'warp-packer', 'warp-packer', version);
 }
 
 run();
 
-export default function downloadLink(version: string, os: string): string {
+function getExecutableName(os: string) : string {
     let warp : { [key:string]:string; } = {};
     warp["win32"] = "windows-x64.warp-packer.exe";
     warp["linux"] = "linux-x64.warp-packer";
     warp["darwin"] = "macos.warp-packer"; 
-    return `https://github.com/dgiagio/warp/releases/download/v${version}/${warp[os]}`;    
+    return warp[os];
+}
+
+export default function downloadLink(version: string, file: string): string { 
+    return `https://github.com/dgiagio/warp/releases/download/v${version}/${file}`;    
 }

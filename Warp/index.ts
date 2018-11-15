@@ -1,7 +1,4 @@
 import * as taskLib from 'azure-pipelines-task-lib/task';
-import { ToolRunner } from 'azure-pipelines-task-lib/toolrunner';
-import { EventEmitter } from 'events';
-import { TLSSocket } from 'tls';
 
 async function run() : Promise<any> {
     let warpPacker = taskLib.tool('warp-packer');
