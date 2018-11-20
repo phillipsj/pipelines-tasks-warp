@@ -1,5 +1,7 @@
 import * as taskLib from 'azure-pipelines-task-lib/task';
 import * as toolLib from 'azure-pipelines-tool-lib/tool';
+import path = require('path');
+import fs = require('fs');
 import * as os from 'os';
 
 async function run() {
@@ -15,13 +17,20 @@ async function run() {
 
 async function getNode(version: string) {
     // check cache
-    let toolPath: string = toolLib.findLocalTool('warp-packer', version);
+    let toolPath: string = toolLib.findLocalTool('warp', version);
 
     if (!toolPath) {
         toolPath = await acquireNode(version);
     }
-    
-    toolLib.prependPath(toolPath);
+
+    console.log(toolPath);
+    let warpPath: string = toolLib.findLocalTool('warp', version);
+
+    if(!warpPath){
+        throw new Error(taskLib.loc("WarpNotFoundInFolder", toolPath))
+    }
+    fs.chmodSync(toolPath, "777");
+    toolLib.prependPath(warpPath);
 }
 
 async function acquireNode(version: string): Promise<string> {
@@ -29,7 +38,7 @@ async function acquireNode(version: string): Promise<string> {
     let warpExecutable: string = getExecutableName(os.platform());
     let downloadUrl = downloadLink(version, warpExecutable)
     let downloadPath = await toolLib.downloadTool(downloadUrl);    
-    return await toolLib.cacheFile(downloadPath, warpExecutable, 'warp-packer', version);
+    return await toolLib.cacheFile(downloadPath, warpExecutable, 'warp', version);
 }
 
 run();
