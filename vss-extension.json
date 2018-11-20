@@ -1,67 +1,67 @@
 {
-    "manifestVersion": 1,
-    "id": "WarpTools",
-    "name": "Warp Tools",
-    "version": "0.10.0",
-    "publisher": "JamiePhillips",
-    "public": true,
-    "targets": [
-        {
-            "id": "Microsoft.VisualStudio.Services"
-        }
-    ],    
-    "description": "Tools for building/releasing with Warp. Includes one build/release task.",
-    "categories": [
-        "Build and release"
-    ],
-    "icons": {
-        "default": "images/extension-icon.png"        
+  "manifestVersion": 1,
+  "id": "WarpTools",
+  "name": "Warp Tools",
+  "version": "0.12.0",
+  "publisher": "JamiePhillips",
+  "public": true,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Tools for building/releasing with Warp. Includes one build/release task.",
+  "categories": [
+    "Build and release"
+  ],
+  "icons": {
+    "default": "images/extension-icon.png"
+  },
+  "files": [
+    {
+      "path": "Warp"
     },
-    "files": [
-        {
-            "path": "Warp"
-        },
-        {
-            "path": "WarpTool"
-        }
-    ],
-    "content": {
-        "details": {
-            "path": "README.md"
-        }
+    {
+      "path": "WarpTool"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "README.md"
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/phillipsj/pipelines-tasks-warp#README"
     },
-    "links": {
-        "getstarted": {
-            "uri": "https://github.com/phillipsj/pipelines-tasks-warp#README"
-        },
-        "support": {
-            "uri": "https://github.com/phillipsj/pipelines-tasks-warp"
-        }
+    "support": {
+      "uri": "https://github.com/phillipsj/pipelines-tasks-warp"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/phillipsj/pipelines-tasks-warp"
+  },
+  "contributions": [
+    {
+      "id": "Warp",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "Warp"
+      }
     },
-    "repository": {
-        "type": "git",
-        "uri": "https://github.com/phillipsj/pipelines-tasks-warp"
-    },
-    "contributions": [
-        {
-            "id": "Warp",
-            "type": "ms.vss-distributed-task.task",
-            "targets": [
-                "ms.vss-distributed-task.tasks"
-            ],
-            "properties": {
-                "name": "Warp"
-            }
-        },
-        {
-            "id": "WarpTools",
-            "type": "ms.vss-distributed-task.task",
-            "targets": [
-                "ms.vss-distributed-task.tasks"
-            ],
-            "properties": {
-                "name": "WarpTool"
-            }
-        }
-    ]
+    {
+      "id": "WarpTools",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "WarpTool"
+      }
+    }
+  ]
 }

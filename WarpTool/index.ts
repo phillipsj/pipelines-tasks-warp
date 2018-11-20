@@ -29,7 +29,7 @@ async function acquireNode(version: string): Promise<string> {
     let warpExecutable: string = getExecutableName(os.platform());
     let downloadUrl = downloadLink(version, warpExecutable)
     let downloadPath = await toolLib.downloadTool(downloadUrl);    
-    return await toolLib.cacheFile(downloadPath, 'warp-packer', 'warp-packer', version);
+    return await toolLib.cacheFile(downloadPath, warpExecutable, 'warp-packer', version);
 }
 
 run();
